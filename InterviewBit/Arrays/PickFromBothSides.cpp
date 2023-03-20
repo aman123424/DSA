@@ -15,25 +15,29 @@ using namespace std;
 
 int solve(vector<int> &A, int B) {
 
-    
+    //Defined left to calculate left side sum, right for right end sum, ans => a variable that we will return
     int left = 0, right = 0, ans = INT_MIN, n = A.size();
     
+    //In this for loop we will calculate the sum of B elements from the start of the array
     for(int i = 0; i < B; i++){
         left += A[i];
     }
-    ans = max(ans, left);
     
+    ans = max(ans, left);// assigned left to ans 
+    
+    //In this for loop we will calculate the sum of B elements from the right end of the array
     for(int i = 0; i < B; i++){
         right += A[n - i -1];
     }
-    ans = max(ans, right);
+    ans = max(ans, right); //assigned greater in between ans and right end sum to ans
     
+    //substracting one element from the left side of the array at a time, and adding one element from the right end, and also checking which one is max, and hence assigning the max to ans
     for(int i = 0; i < B; i++){
         left -= A[B - i - 1];
         left += A[n - i - 1];
         ans = max(ans, left);
     }
     
-    return ans;
+    return ans;//ans returned
 
 }
