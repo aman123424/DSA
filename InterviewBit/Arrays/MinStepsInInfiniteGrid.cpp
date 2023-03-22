@@ -123,3 +123,17 @@ int coverPoints(vector<int> &A, vector<int> &B) {
     
     return minSteps;
 }
+
+
+//3 line solution
+
+int coverPoints(vector<int> &A, vector<int> &B) {
+    int count = 0;
+    int n = A.size();
+
+    for(int i = 1; i < n; i++){
+        count += max(abs(A[i] - A[i - 1]), abs(B[i] - B[i - 1]));
+    }
+
+    return count;
+}
