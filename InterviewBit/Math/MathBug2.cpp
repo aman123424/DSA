@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<vector<int> > squareSum(int A) {
+vector<vector<int>> squareSum(int A) {
 	vector<vector<int> > ans;
 	for (int a = 0; a * a < A; a++) {
 		for (int b = a; b * b < A; b++) {
