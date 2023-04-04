@@ -5,21 +5,38 @@ using namespace std;
 
 string findDigitsInBinary(int A) {
     
-    //Method I
+        //Method I
     
     if(A == 0){
         return "0";
     }
+    // int n = A;
+    // string ans;
+    
+    // while(n != 0){
+    //     if(n&1){
+    //         ans = "1" + ans;
+    //     }else{
+    //         ans = "0" + ans;
+    //     }
+    //     n = n>>1;
+    // }
+    
+    // return ans;
+    
+    
+    //Method II
+    
+    int base = 2;
+    
     int n = A;
     string ans;
     
     while(n != 0){
-        if(n&1){
-            ans = "1" + ans;
-        }else{
-            ans = "0" + ans;
-        }
-        n = n>>1;
+        
+        int rem = n%base;
+        ans = to_string(rem) + ans;
+        n = n/base;
     }
     
     return ans;
