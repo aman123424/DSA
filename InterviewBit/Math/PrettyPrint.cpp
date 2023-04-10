@@ -16,7 +16,7 @@ vector<vector<int>> prettyPrint(int A) {
     
     while(count < total){
         for(int i = endCol; i <= startCol; i++){
-            ans[startRow][i] = A - startRow;
+            ans[startRow][i] = A - endCol;
             count++;
         }
         startRow++;
